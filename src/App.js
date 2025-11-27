@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import SearchBar from "./components/SearchBar";
+import WeatherCard from "./components/WeatherCard";
+import { getWeather } from "./api/WeatherApi";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    const [weather, setWeather] = useState(null);
+
+    // For now, fake data to test the UI
+    const handleSearch = async (city) => {
+        try {
+            const result = await getWeather(city);
+            setWeather(result);
+        } catch (err) {
+            alert("City not found");
+        }
+    };
+
+    return (
+        <div
+            style={{
+                minHeight: "100vh",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                paddingTop: "40px",
+                fontFamily: "sans-serif",
+                background: "#f0f4f8"
+            }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+            <h1 style={{ marginBottom: "20px" }}>Weather App</h1>
+
+            <SearchBar onSearch={handleSearch} />
+
+            <WeatherCard weather={weather} />
+        </div>
+    );
+
 }
 
 export default App;
