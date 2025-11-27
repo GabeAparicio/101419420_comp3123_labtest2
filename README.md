@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Weather App – COMP3123 Lab Test 2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React weather application built for **COMP3123 Full Stack Development I (Lab Test 2)**.  
+The app allows users to search for any city and view real-time weather information.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+##  Project Description
 
-### `npm start`
+The application uses React function components, state, props, and hooks to fetch weather data from the **OpenWeatherMap Current Weather API**.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Displayed information includes:
+- Temperature (°C)
+- Weather description
+- Weather icon
+- Min & max temperature
+- Humidity
+- Wind speed
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The app is styled with basic inline CSS and deployed on Vercel.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##  Live Demo
 
-### `npm run build`
+https://101419420-comp3123-labtest2.vercel.app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##  API Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**OpenWeatherMap – Current Weather Endpoint**  
+https://api.openweathermap.org/data/2.5/weather
 
-### `npm run eject`
+Request format:
+https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+##  Setup Steps
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1. Install dependencies
+npm install
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2. Run the app
+npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### 3. Build for production
+npm run build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+##  Screenshots
 
-### Making a Progressive Web App
+![img.png](img.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![img_1.png](img_1.png)
 
-### Advanced Configuration
+![img_2.png](img_2.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![img_3.png](img_3.png)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##  Notes / Assumptions
+
+- Uses metric units (°C) for all temperature values.
+- City names must be typed correctly for valid results.
+- Only the current weather endpoint was used (no forecast).
+- API key must be active for real data to load.

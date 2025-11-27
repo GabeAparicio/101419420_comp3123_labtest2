@@ -7,7 +7,6 @@ import { getWeather } from "./api/WeatherApi";
 function App() {
     const [weather, setWeather] = useState(null);
 
-    // For now, fake data to test the UI
     const handleSearch = async (city) => {
         try {
             const result = await getWeather(city);
